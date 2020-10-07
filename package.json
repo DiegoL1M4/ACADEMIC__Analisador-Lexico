@@ -1,0 +1,22 @@
+{
+  "name": "analisador-lexico",
+  "version": "1.0.0",
+  "description": "Trabalho academico",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiegoL1M4/ACADEMIC__Analisador-Lexico.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DiegoL1M4/ACADEMIC__Analisador-Lexico/issues"
+  },
+  "homepage": "https://github.com/DiegoL1M4/ACADEMIC__Analisador-Lexico#readme",
+  "dependencies": {
+    "file-system": "^2.2.2"
+  }
+}

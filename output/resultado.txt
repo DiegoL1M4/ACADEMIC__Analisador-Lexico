@@ -1,0 +1,66 @@
+var i = 600;
+if (i % 2 == 0) {
+  console.log("É número par!");
+}
+else {
+  console.log("É número ímpar!");
+}
+for (j = 0; j < 1; j++) {
+  console.log(j);
+}
+
+
+
+Token; Lexema; Descrição; Linha do Código; Posição na Linha;
+<var,>; var; Palavra Reservada; 1; 1
+<Identificador, i>; i; Identificador; 1; 5
+<=,>; =; Operador; 1; 7
+<Constante, 600>; 600; Constante; 1; 9
+<;,>; ;; Terminador; 1; 12
+<if,>; if; Palavra Reservada; 2; 1
+<(,>; (; Terminador; 2; 4
+<Identificador, i>; i; Identificador; 1; 5
+<%,>; %; Operador; 2; 7
+<Constante, 2>; 2; Constante; 2; 9
+<==,>; ==; Operador; 2; 11
+<Constante, 0>; 0; Constante; 1; 10
+<),>; ); Terminador; 2; 15
+<{,>; {; Terminador; 2; 17
+<console.log,>; console.log; Palavra Reservada; 3; 3
+<(,>; (; Terminador; 2; 4
+<",>; "; Terminador; 3; 15
+<Literal, É número par!>; É número par!; Literal; 3; 16
+<",>; "; Terminador; 3; 15
+<),>; ); Terminador; 2; 15
+<;,>; ;; Terminador; 1; 12
+<},>; }; Terminador; 4; 1
+<else,>; else; Palavra Reservada; 5; 1
+<{,>; {; Terminador; 2; 17
+<console.log,>; console.log; Palavra Reservada; 3; 3
+<(,>; (; Terminador; 2; 4
+<",>; "; Terminador; 3; 15
+<Literal, É número ímpar!>; É número ímpar!; Literal; 6; 16
+<",>; "; Terminador; 3; 15
+<),>; ); Terminador; 2; 15
+<;,>; ;; Terminador; 1; 12
+<},>; }; Terminador; 4; 1
+<for,>; for; Palavra Reservada; 8; 1
+<(,>; (; Terminador; 2; 4
+<Identificador, j>; j; Identificador; 8; 6
+<=,>; =; Operador; 1; 7
+<Constante, 0>; 0; Constante; 1; 10
+<;,>; ;; Terminador; 1; 12
+<Identificador, j>; j; Identificador; 8; 6
+<<,>; <; Operador; 8; 15
+<Constante, 1>; 1; Constante; 8; 17
+<;,>; ;; Terminador; 1; 12
+<Identificador, j>; j; Identificador; 8; 6
+<++,>; ++; Operador; 8; 21
+<),>; ); Terminador; 2; 15
+<{,>; {; Terminador; 2; 17
+<console.log,>; console.log; Palavra Reservada; 3; 3
+<(,>; (; Terminador; 2; 4
+<Identificador, j>; j; Identificador; 8; 6
+<),>; ); Terminador; 2; 15
+<;,>; ;; Terminador; 1; 12
+<},>; }; Terminador; 4; 1
