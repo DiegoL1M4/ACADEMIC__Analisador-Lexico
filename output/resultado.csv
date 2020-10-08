@@ -1,0 +1,22 @@
+Token; Lexema; Descrição; Linha do Código; Posição na Linha;
+<Comentário, // var i = 600;>; //; Comentário; 1; 1
+<Comentário, // if (i % 2 == 0) {>; //; Comentário; 1; 1
+<Comentário, //   console.log("É número par!");>; //; Comentário; 1; 1
+<Comentário, // }>; //; Comentário; 1; 1
+<Comentário, // else {>; //; Comentário; 1; 1
+<console.log,>; console.log; Palavra Reservada; 3; 6
+<Literal, "É número ímpar!">; "É número ímpar!"; Literal; 6; 15
+<),>; ); Terminador; 2; 18
+<;,>; ;; Terminador; 1; 15
+<Comentário, // }>; //; Comentário; 1; 1
+<Comentário, // for (j = 0; j < 1; j++) {>; //; Comentário; 1; 1
+<Comentário, //   console.log(j);>; //; Comentário; 1; 1
+<Comentário, // }>; //; Comentário; 1; 1
+<var,>; var; Palavra Reservada; 1; 4
+<Identificador, list>; list; Identificador; 12; 5
+<=,>; =; Operador; 1; 10
+<[,>; [; Terminador; 12; 12
+<Constante, 1>; 1; Constante; 8; 20
+<Constante, 2>; 2; Constante; 2; 12
+<Constante, 3>; 3; Constante; 12; 17
+<],>; ]; Terminador; 12; 18

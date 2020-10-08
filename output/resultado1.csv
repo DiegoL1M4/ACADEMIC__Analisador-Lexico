@@ -1,0 +1,22 @@
+Token; Lexema; Descrição; Linha do Código; Posição na Linha;
+<var,>; var; Palavra Reservada; 1; 1
+<Identificador, i>; i; Identificador; 1; 5
+<=,>; =; Operador; 1; 7
+<Constante, 600>; 600; Constante; 1; 9
+<;,>; ;; Terminador; 1; 12
+<if,>; if; Palavra Reservada; 2; 1
+<(,>; (; Terminador; 2; 4
+<Identificador, i>; i; Identificador; 1; 5
+<%,>; %; Operador; 2; 7
+<Constante, 2>; 2; Constante; 2; 9
+<==,>; ==; Operador; 2; 11
+<Constante, 0>; 0; Constante; 1; 10
+<),>; ); Terminador; 2; 15
+<{,>; {; Terminador; 2; 17
+<console.log,>; console.log; Palavra Reservada; 3; 3
+<(,>; (; Terminador; 2; 4
+<",>; "; Terminador; 3; 15
+<Literal, É número par!>; É número par!; Literal; 3; 16
+<",>; "; Terminador; 3; 15
+<),>; ); Terminador; 2; 15
+<;,>; ;; Terminador; 1; 12
