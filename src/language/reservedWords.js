@@ -1,9 +1,8 @@
 
 module.exports = reservedWord = [
-    'class', 'abstract', 'private', 'protected', 'public', 'extends', 'implement',
-    'boolen', 'char', 'int', 'float', 'double', 'string',
-    'if', 'else', 'for', 'while', 'switch', 'break', 'continue',
-    'try', 'catch', 'throw',
-    'print',
-    'return', 'var', 'console.log'
+    'class', 'super', 'var', 'instanceof', 'typeof', 'this', 'null',
+    'with', 'delete', 'debugger',
+    'if', 'else', 'for', 'of', 'while', 'do', 'switch', 'case', 'default', 'break', 'continue',
+    'try', 'catch', 'throw', 'finally',
+    'function', 'return'
 ];
