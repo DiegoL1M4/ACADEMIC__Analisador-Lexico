@@ -4,7 +4,7 @@
   "description": "Trabalho academico",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,9 @@
   "homepage": "https://github.com/DiegoL1M4/ACADEMIC__Analisador-Lexico#readme",
   "dependencies": {
     "file-system": "^2.2.2"
+  },
+  "devDependencies": {
+    "electron": "^10.1.3",
+    "electron-packager": "^15.1.0"
   }
 }

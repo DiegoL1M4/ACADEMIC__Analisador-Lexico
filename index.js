@@ -4,39 +4,46 @@ var operators = require('./language/operators')
 var reservedWords = require('./language/reservedWords')
 var terminators = require('./language/terminators')
 
-var code = fs.readFileSync('enter-code/comando.js', 'utf8')
-var codeLines = code.split('\n');
+var code = fs.readFileSync('data/inputCode.js', 'utf8')
+var cvsFile = '\n############ TABELA DE TOKENS ############\n' 
+            + 'Token; Lexema; Descrição\n';
 
-var cvsFile = 'Token; Lexema; Descrição; Linha do Código; Posição na Linha;\n';
+var trail = "nada";         // Identifica o tipo de char do token atual
+var current_token = "";     // Guarda o conjunto de caracteres do token atual
+var $VerifyBlock = "";      // String auxiliar para encontrar o fim de um bloco de comentário
+var commentLine = false;    // Identificador de comentário de linha
+var commentBlock = false;   // Identificador de comentário em bloco
+var open_quotes = false;    // Identificador de abertura de aspas
+var type_open_quotes = ""   // Identifica qual tipo de aspa abriu o literal
+var backslash = true;       // Auxiliar pra identificar o uso de uma barra invertifa em uma string
 
-var trail = "nada";             // Identifica o tipo de char anterior ao atual (identificar sequencias)
-var current_token = ''; 
-var verifyBlock = "";
-var commentLine = false;
-var commentBlock = false;
-var open_quotes = false;              // Se for true todo o conteúdo deve ser salvo como um só
-
+// Execução Principal (Leitura do Código por Caractere)
 for (char of code) {
   if (open_quotes) {
     current_token += char;
-    
-    if (char == '"') {
+
+    if (!backslash && char == type_open_quotes) {
       open_quotes = !open_quotes;
       trail = "literal";
       current_token = checkToken(current_token);
     }
+    
+    if(!backslash && char == '\\')
+      backslash = true;
+    else
+      backslash = false;
 
     trail = "terminador";
 
   } else if (commentBlock) {
     if (char == "*") {
-      verifyBlock = "*";
+      $VerifyBlock = "*"; 
     } else {
-      verifyBlock += char;
+      $VerifyBlock += char;
     }
 
     current_token += char;
-    if (verifyBlock == '*/'){
+    if ($VerifyBlock == '*/'){
       commentBlock = false;
       trail = "comentario";
       current_token = checkToken(current_token);
@@ -72,7 +79,7 @@ for (char of code) {
               trail = "letra";
             }
 
-          } else if (Number.isInteger(parseInt(current_token[0]))) {
+          } else if (is_number(current_token[0]) && is_number(char)) {
             current_token += char;
             trail = "constante";
 
@@ -84,8 +91,9 @@ for (char of code) {
           }
 
         } else {
-          if (char == '"') {
-            current_token = '"';
+          if (char == '"' || char == '\'') {
+            type_open_quotes = char;
+            current_token = char;
             open_quotes = !open_quotes;
           } else {
             current_token = checkToken(current_token);
@@ -123,13 +131,14 @@ for (char of code) {
 if (current_token != '')
   checkToken(current_token);
 
-fs.writeFile('./output/resultado.csv', cvsFile, function (err) { })
+// Salva Arquivo
+fs.writeFile('./data/outputTable.csv', cvsFile, function (err) { })
 
+
+
+// Funções
 function checkToken(current_token) {
-  if (current_token == ',') {
-    return '';
-
-  } else if (current_token != '') {
+  if (current_token != '') {
     switch (trail) {
       case "nada":
         break;
@@ -147,19 +156,25 @@ function checkToken(current_token) {
         break;
 
       case "operador":
-        insertTable(current_token, 'Operador');
+        if (current_token == '=')
+          insertTable(current_token, 'Atribuição');
+        else
+          insertTable(current_token, 'Operador');
         break;
 
       case "constante":
-        insertTable(current_token, 'Constante');
+        insertTable(current_token, 'Constante Numérica');
         break;
 
       case "literal":
-        insertTable(current_token, 'Literal');
+        insertTable(current_token, 'Constante Literal');
         break;
 
       case "terminador":
-        insertTable(current_token, 'Terminador');
+        if (current_token == ',')
+          insertTable(current_token, 'Separador');
+        else
+          insertTable(current_token, 'Terminador');
         break;
 
     }
@@ -172,22 +187,22 @@ function insertTable(id, token_type) {
   var token = "";
   switch(token_type) {
     case 'Identificador':
-    case 'Constante':
-    case 'Literal':
+    case 'Constante Numérica':
+    case 'Constante Literal':
       token = `<${token_type}, ${id}>`;
       break;
 
     case 'Comentário':
-      token = `<${token_type}, ${id}>`;
+      token = `< ${token_type} , ${id} >`;
       id = '//';
       break;
 
     default:
-      token = `<${id},>`;
+      token = `< ${id} , >`;
       break;
   }
 
-  cvsFile += `${token}; ${id}; ${token_type}\n`;
+  cvsFile += `${token};\t ${id};\t ${token_type}\n`;
 
 }
 

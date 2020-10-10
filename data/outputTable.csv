@@ -1,0 +1,63 @@
+
+############ TABELA DE TOKENS ############
+Token; Lexema; Descrição
+< Comentário , // var i = 600 >;	 //;	 Comentário
+< var , >;	 var;	 Palavra Reservada
+<Identificador, f>;	 f;	 Identificador
+< = , >;	 =;	 Atribuição
+<Constante Numérica, 30.8>;	 30.8;	 Constante Numérica
+< ; , >;	 ;;	 Terminador
+< if , >;	 if;	 Palavra Reservada
+< ( , >;	 (;	 Terminador
+<Identificador, i>;	 i;	 Identificador
+< % , >;	 %;	 Operador
+<Constante Numérica, 2>;	 2;	 Constante Numérica
+< == , >;	 ==;	 Operador
+<Constante Numérica, 0>;	 0;	 Constante Numérica
+< ) , >;	 );	 Terminador
+< { , >;	 {;	 Terminador
+<Identificador, console.log>;	 console.log;	 Identificador
+< ( , >;	 (;	 Terminador
+<Constante Literal, "É número \\ \" \' ' par!">;	 "É número \\ \" \' ' par!";	 Constante Literal
+< ) , >;	 );	 Terminador
+< ; , >;	 ;;	 Terminador
+< } , >;	 };	 Terminador
+< else , >;	 else;	 Palavra Reservada
+< { , >;	 {;	 Terminador
+<Identificador, console.log>;	 console.log;	 Identificador
+< ( , >;	 (;	 Terminador
+<Constante Literal, "É número ímpar!">;	 "É número ímpar!";	 Constante Literal
+< ) , >;	 );	 Terminador
+< ; , >;	 ;;	 Terminador
+< } , >;	 };	 Terminador
+< for , >;	 for;	 Palavra Reservada
+< ( , >;	 (;	 Terminador
+<Identificador, j>;	 j;	 Identificador
+< = , >;	 =;	 Atribuição
+<Constante Numérica, 0>;	 0;	 Constante Numérica
+< ; , >;	 ;;	 Terminador
+<Identificador, j>;	 j;	 Identificador
+< < , >;	 <;	 Operador
+<Constante Numérica, 1>;	 1;	 Constante Numérica
+< ; , >;	 ;;	 Terminador
+<Identificador, j>;	 j;	 Identificador
+< ++ , >;	 ++;	 Operador
+< ) , >;	 );	 Terminador
+< { , >;	 {;	 Terminador
+<Identificador, console.log>;	 console.log;	 Identificador
+< ( , >;	 (;	 Terminador
+<Identificador, j>;	 j;	 Identificador
+< ) , >;	 );	 Terminador
+< ; , >;	 ;;	 Terminador
+< } , >;	 };	 Terminador
+< var , >;	 var;	 Palavra Reservada
+<Identificador, list>;	 list;	 Identificador
+< = , >;	 =;	 Atribuição
+< [ , >;	 [;	 Terminador
+<Constante Numérica, 10000000>;	 10000000;	 Constante Numérica
+< , , >;	 ,;	 Separador
+<Constante Numérica, 2>;	 2;	 Constante Numérica
+< , , >;	 ,;	 Separador
+<Constante Numérica, 3>;	 3;	 Constante Numérica
+< ] , >;	 ];	 Terminador
+< ; , >;	 ;;	 Terminador
