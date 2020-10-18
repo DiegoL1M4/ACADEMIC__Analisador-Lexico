@@ -2,7 +2,7 @@ var fs = require('file-system')
 
 var operators = require('./language/operators')
 var reservedWords = require('./language/reservedWords')
-var terminators = require('./language/terminators')
+var delimiters = require('./language/delimiters')
 
 var code = fs.readFileSync('data/inputCode.js', 'utf8')
 var cvsFile = '\n############ TABELA DE TOKENS ############\n' 
@@ -33,7 +33,7 @@ for (char of code) {
     else
       backslash = false;
 
-    trail = "terminador";
+    trail = "delimitador";
 
   } else if (commentBlock) {
     if (char == "*") {
@@ -50,7 +50,7 @@ for (char of code) {
     }
 
   } else if (commentLine) {
-    if (char == "\n") {
+    if (char == "\n" || char == "\r") {
       commentLine = false;
       trail = "comentario";
       current_token = checkToken(current_token);
@@ -58,14 +58,14 @@ for (char of code) {
       current_token += char;
     }
 
-  } else if (char == "\n") {
+  } else if (char == "\n" || char == "\r") {
 
   } else {
     if (!is_space(char)) {
 
       if (!is_operator(char)) {
 
-        if (!is_terminator(char)) {
+        if (!is_delimiter(char)) {
 
           if (!is_number(char)) {
             if (char == "." && is_number(current_token)) {
@@ -98,7 +98,7 @@ for (char of code) {
           } else {
             current_token = checkToken(current_token);
             current_token += char;
-            trail = "terminador";
+            trail = "delimitador";
             current_token = checkToken(current_token);
           }
 
@@ -170,11 +170,17 @@ function checkToken(current_token) {
         insertTable(current_token, 'Constante Literal');
         break;
 
-      case "terminador":
+      case "delimitador":
         if (current_token == ',')
           insertTable(current_token, 'Separador');
-        else
+        else if (current_token == ';')
           insertTable(current_token, 'Terminador');
+        else if (current_token == '(' || current_token == '{' || current_token == '[')
+          insertTable(current_token, 'Delimitador - Abertura');
+        else if (current_token == ')' || current_token == '}' || current_token == ']')
+          insertTable(current_token, 'Delimitador - Fechamento');
+        else
+          insertTable(current_token, 'Delimitador');
         break;
 
     }
@@ -194,7 +200,7 @@ function insertTable(id, token_type) {
 
     case 'Comentário':
       token = `< ${token_type} , ${id} >`;
-      id = '//';
+      id = 'Comentário';
       break;
 
     default:
@@ -222,8 +228,8 @@ function is_operator(char) {
   return operators.includes(char);
 }
 
-function is_terminator(char) {
-  return terminators.includes(char)
+function is_delimiter(char) {
+  return delimiters.includes(char)
 }
 
 function is_number(char) {

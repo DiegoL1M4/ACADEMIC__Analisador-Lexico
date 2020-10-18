@@ -1,0 +1,65 @@
+
+############ TABELA DE TOKENS ############
+Token; Lexema; Descrição
+< Comentário , /* Analisador Léxico */ >;	 Comentário;	 Comentário
+< Comentário , // Teste Code 1 >;	 Comentário;	 Comentário
+< var , >;	 var;	 Palavra Reservada
+<Identificador, and>;	 and;	 Identificador
+< = , >;	 =;	 Atribuição
+< true , >;	 true;	 Palavra Reservada
+< && , >;	 &&;	 Operador
+< ! , >;	 !;	 Operador
+<Identificador, teste>;	 teste;	 Identificador
+< || , >;	 ||;	 Operador
+< false , >;	 false;	 Palavra Reservada
+< ; , >;	 ;;	 Terminador
+< let , >;	 let;	 Palavra Reservada
+<Identificador, numInt>;	 numInt;	 Identificador
+< = , >;	 =;	 Atribuição
+<Constante Numérica, 1000000000>;	 1000000000;	 Constante Numérica
+< - , >;	 -;	 Operador
+<Constante Numérica, 55.99>;	 55.99;	 Constante Numérica
+< ; , >;	 ;;	 Terminador
+<Identificador, numInt>;	 numInt;	 Identificador
+< ++ , >;	 ++;	 Operador
+< ; , >;	 ;;	 Terminador
+<Identificador, numInt>;	 numInt;	 Identificador
+< -= , >;	 -=;	 Operador
+<Constante Numérica, 10>;	 10;	 Constante Numérica
+< ; , >;	 ;;	 Terminador
+< if , >;	 if;	 Palavra Reservada
+< ( , >;	 (;	 Delimitador - Abertura
+<Identificador, numFloat>;	 numFloat;	 Identificador
+< >= , >;	 >=;	 Operador
+<Identificador, numInt>;	 numInt;	 Identificador
+< ) , >;	 );	 Delimitador - Fechamento
+< { , >;	 {;	 Delimitador - Abertura
+<Identificador, console.log>;	 console.log;	 Identificador
+< ( , >;	 (;	 Delimitador - Abertura
+<Constante Literal, "Teste 'string'">;	 "Teste 'string'";	 Constante Literal
+< ) , >;	 );	 Delimitador - Fechamento
+< ; , >;	 ;;	 Terminador
+< } , >;	 };	 Delimitador - Fechamento
+< else , >;	 else;	 Palavra Reservada
+< if , >;	 if;	 Palavra Reservada
+< ( , >;	 (;	 Delimitador - Abertura
+<Identificador, numFloat>;	 numFloat;	 Identificador
+< == , >;	 ==;	 Operador
+<Identificador, numInt>;	 numInt;	 Identificador
+< ) , >;	 );	 Delimitador - Fechamento
+< { , >;	 {;	 Delimitador - Abertura
+<Identificador, console.log>;	 console.log;	 Identificador
+< ( , >;	 (;	 Delimitador - Abertura
+<Constante Literal, 'Teste "string"'>;	 'Teste "string"';	 Constante Literal
+< ) , >;	 );	 Delimitador - Fechamento
+< ; , >;	 ;;	 Terminador
+< } , >;	 };	 Delimitador - Fechamento
+<Identificador, esle>;	 esle;	 Identificador
+< { , >;	 {;	 Delimitador - Abertura
+< Comentário , // Erro proposital >;	 Comentário;	 Comentário
+<Identificador, console.log>;	 console.log;	 Identificador
+< ( , >;	 (;	 Delimitador - Abertura
+<Constante Literal, "Barra invertida \\ \" \'">;	 "Barra invertida \\ \" \'";	 Constante Literal
+< ) , >;	 );	 Delimitador - Fechamento
+< ; , >;	 ;;	 Terminador
+< } , >;	 };	 Delimitador - Fechamento

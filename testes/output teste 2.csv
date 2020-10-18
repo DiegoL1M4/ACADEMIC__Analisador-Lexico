@@ -1,0 +1,77 @@
+
+############ TABELA DE TOKENS ############
+Token; Lexema; Descrição
+< Comentário , /* Analisador Léxico */ >;	 Comentário;	 Comentário
+< Comentário , // Teste Code 2 >;	 Comentário;	 Comentário
+< for , >;	 for;	 Palavra Reservada
+< ( , >;	 (;	 Delimitador - Abertura
+<Identificador, j>;	 j;	 Identificador
+< = , >;	 =;	 Atribuição
+<Constante Numérica, 0>;	 0;	 Constante Numérica
+< ; , >;	 ;;	 Terminador
+<Identificador, j>;	 j;	 Identificador
+< < , >;	 <;	 Operador
+<Constante Numérica, 1>;	 1;	 Constante Numérica
+< ; , >;	 ;;	 Terminador
+<Identificador, j>;	 j;	 Identificador
+< ++ , >;	 ++;	 Operador
+< ) , >;	 );	 Delimitador - Fechamento
+< { , >;	 {;	 Delimitador - Abertura
+<Identificador, x>;	 x;	 Identificador
+< = , >;	 =;	 Atribuição
+< [ , >;	 [;	 Delimitador - Abertura
+<Constante Numérica, 1>;	 1;	 Constante Numérica
+< , , >;	 ,;	 Separador
+<Constante Numérica, 2>;	 2;	 Constante Numérica
+< ] , >;	 ];	 Delimitador - Fechamento
+< ; , >;	 ;;	 Terminador
+< } , >;	 };	 Delimitador - Fechamento
+< while , >;	 while;	 Palavra Reservada
+< ( , >;	 (;	 Delimitador - Abertura
+<Identificador, numFloat>;	 numFloat;	 Identificador
+< > , >;	 >;	 Operador
+<Identificador, numInt>;	 numInt;	 Identificador
+< ) , >;	 );	 Delimitador - Fechamento
+< { , >;	 {;	 Delimitador - Abertura
+<Identificador, xy>;	 xy;	 Identificador
+< = , >;	 =;	 Atribuição
+< [ , >;	 [;	 Delimitador - Abertura
+< [ , >;	 [;	 Delimitador - Abertura
+<Constante Numérica, 1>;	 1;	 Constante Numérica
+< ] , >;	 ];	 Delimitador - Fechamento
+< , , >;	 ,;	 Separador
+< [ , >;	 [;	 Delimitador - Abertura
+<Constante Numérica, 2>;	 2;	 Constante Numérica
+< ] , >;	 ];	 Delimitador - Fechamento
+< ] , >;	 ];	 Delimitador - Fechamento
+< ; , >;	 ;;	 Terminador
+< } , >;	 };	 Delimitador - Fechamento
+< do , >;	 do;	 Palavra Reservada
+< { , >;	 {;	 Delimitador - Abertura
+<Identificador, numFloat>;	 numFloat;	 Identificador
+< = , >;	 =;	 Atribuição
+<Constante Numérica, 5>;	 5;	 Constante Numérica
+< ; , >;	 ;;	 Terminador
+< } , >;	 };	 Delimitador - Fechamento
+< while , >;	 while;	 Palavra Reservada
+< ( , >;	 (;	 Delimitador - Abertura
+<Identificador, numFloat>;	 numFloat;	 Identificador
+< < , >;	 <;	 Operador
+<Identificador, numInt>;	 numInt;	 Identificador
+< ) , >;	 );	 Delimitador - Fechamento
+< ; , >;	 ;;	 Terminador
+< switch , >;	 switch;	 Palavra Reservada
+< ( , >;	 (;	 Delimitador - Abertura
+<Identificador, numFloat>;	 numFloat;	 Identificador
+< ) , >;	 );	 Delimitador - Fechamento
+< { , >;	 {;	 Delimitador - Abertura
+< case , >;	 case;	 Palavra Reservada
+<Constante Literal, 'a'>;	 'a';	 Constante Literal
+< : , >;	 :;	 Operador
+< break , >;	 break;	 Palavra Reservada
+< ; , >;	 ;;	 Terminador
+< default , >;	 default;	 Palavra Reservada
+< : , >;	 :;	 Operador
+< continue , >;	 continue;	 Palavra Reservada
+< ; , >;	 ;;	 Terminador
+< } , >;	 };	 Delimitador - Fechamento
